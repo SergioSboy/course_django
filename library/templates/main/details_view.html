@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <h3>Имя автора:</h3>
+    <p>{{ book.name_author }}</p>
+    <h3>Количество страниц:</h3>
+    <p>{{ book.count_page }}</p>
+    <h3>Дата выхода:</h3>
+    <p>{{ book.date }}</p>
+
+    <a href="{% url 'book-delete' book.id %}"><button>Удалить</button></a>
+    <a href="{% url 'book-update' book.id %}"><button>Редактировать</button></a>
+
+    <a href="{% url 'main' %}">
+        <button>К записям</button>
+    </a>
+</body>
+</html>

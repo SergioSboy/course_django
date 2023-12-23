@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Название книги</th>
+        <th>Автор книги</th>
+        <th>Дата выхода</th>
+        <th>Количество страниц</th>
+
+    </tr>
+    </thead>
+    {% for el  in books %}
+
+        <tbody>
+        <tr class='success'>
+            <td>{{ el.title }}</td>
+            <td>{{ el.name_author }}</td>
+            <td>{{ el.date }}</td>
+            <td>{{ el.count_page }}</td>
+            <td><a href="{% url 'book-detail' el.id %}">Подробнее</a></td>
+        </tr>
+        </tbody>
+
+    {% endfor %}
+</table>
+<h4>Упорядочить</h4>
+<a href="{% url 'index_author' %}">
+    <button>По автору</button>
+</a>
+<a href="{% url 'main' %}">
+    <button>По названию</button>
+</a>
+<a href="{% url 'index_date' %}">
+    <button>По дате выпуска</button>
+</a>
+<a href="{% url 'index_page' %}">
+    <button>По количеству страниц</button>
+</a>
+<hr>
+<a href="{% url 'create' %}">
+    <button>Добавить книгу</button>
+</a>
+</body>
+</html>
